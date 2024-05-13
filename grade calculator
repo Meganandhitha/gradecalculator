@@ -1,0 +1,33 @@
+import tkinter as tk
+
+def calculate_grade():
+    score = float(entry_score.get())
+    if score >= 90:
+        grade = "A"
+    elif score >= 80:
+        grade = "B"
+    elif score >= 70:
+        grade = "C"
+    elif score >= 60:
+        grade = "D"
+    elif score >=35:
+        grade = "P"
+    else :
+        grade = "F"
+    label_result.config(text=f"Your grade is: {grade}")
+    
+window = tk.Tk()
+window.title("Grade Calculator")
+
+label_score = tk.Label(window, text="Enter your score:")
+label_score.pack()
+entry_score = tk.Entry(window)
+entry_score.pack()
+
+calculate_button = tk.Button(window, text="Calculate Grade", command=calculate_grade)
+calculate_button.pack()
+
+label_result = tk.Label(window, text="")
+label_result.pack()
+
+window.mainloop()
